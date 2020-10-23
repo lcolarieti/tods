@@ -1,0 +1,23 @@
+.header {
+  border-bottom: 1px solid $light-grey;
+
+  .logo {
+    display: block;
+    margin: 36px auto;
+
+    @media screen and (max-width: $screen-s) {
+      margin: 20px auto;
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    right: $padding;
+    @include transform(translateY(-50%));
+
+    @media screen and (max-width: $screen-s) {
+      right: 25px;
+    }
+  }
+}

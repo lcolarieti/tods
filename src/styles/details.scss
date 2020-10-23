@@ -1,0 +1,123 @@
+.details {
+  position: relative;
+  width: 45%;
+  padding-left: 10px;
+
+  @media screen and (max-width: $screen-m) {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    margin: 60px 0 25px 0;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 0 0 5px 0;
+
+    strong {
+      font-weight: 700;
+    }
+
+    span {
+      color: $light-blue;
+
+      a {
+        text-decoration: none;
+        color: $light-blue;
+
+        &:visited,
+        &:focus,
+        &:active {
+          text-decoration: none;
+          color: $light-blue;
+        }
+      }
+    }
+
+
+    &.price {
+      font-size: 24px;
+      line-height: 24px;
+      font-weight: 700;
+      margin:  0 0 60px 0;
+      color: $light-blue;
+    }
+
+    &.summary {
+      margin: 20px 0;
+      font-weight: 300;
+    }
+
+    &.description {
+      margin: 0 0 30px 0;
+    }
+  }
+
+  .description-container {
+    ul {
+      margin: 0 0 30px 0;
+      list-style-type: none;
+      padding: 0 0 0 20px;
+
+      li {
+        position: relative;
+        margin: 0 0 5px 0;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+
+        &:before {
+          content: "\2022";
+          color: $light-grey;
+          font-weight: bold;
+          display: inline-block;
+          width: 20px;
+          margin-left: -20px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .product-options {
+
+    .dropdown {
+      margin-right: 20px;
+
+      @media screen and (max-width: $screen-m) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+
+  }
+
+  .button-container {
+    margin-top: 90px;
+
+    .button {
+      width: calc(50% - 10px);
+      margin-right: 20px;
+
+      @media screen and (max-width: $screen-m) {
+        margin: 0 0 30px 0;
+        width: 100%;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+
+        @media screen and (max-width: $screen-m) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.cart-btn {
+  position: relative;
+  font-size: 12px;
+  line-height: 12px;
+  color: #111111;
+  font-weight: 400;
+  text-align: center;
+  padding: 14px 40px;
+  background-color: #ffffff;
+  border: 2px solid #ded3aa;
+  outline: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  @include transition(200ms linear all);
+
+  &:hover {
+    background-color: #ded3aa;
+    text-decoration: underline;
+  }
+
+  svg {
+    display: none;
+  }
+
+  @media screen and (max-width: $screen-s) {
+    font-size: 20px;
+    line-height: 20px;
+    color: #111111;
+    text-align: center;
+    padding: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    svg {
+      display: block;
+    }
+
+    span {
+
+      &:first-of-type,
+      &:last-of-type,
+      &:nth-of-type(2) {
+        display: none;
+      }
+
+      &:nth-of-type(3) {
+        position: absolute;
+        top: -16px;
+        right: -16px;
+        background-color: $light-blue;
+        color: #ffffff;
+        font-size: 14px;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        border-radius: 50%;
+      }
+    }
+  }
+}

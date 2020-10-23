@@ -1,0 +1,46 @@
+.carousel {
+  position: relative;
+  width: 55%;
+  padding-right: 10px;
+
+  @media screen and (max-width: $screen-m) {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  img {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+  }
+
+  .main {
+    background-color: $light-grey;
+    border: 1px solid $light-grey;
+  }
+
+  .thumbnails {
+    display: flex;
+    margin-top: 20px;
+
+    &-item {
+      position: relative;
+      border: 1px solid $light-grey;
+      margin-right: 20px;
+      cursor: pointer;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      img {
+        opacity: 1;
+        @include transition(200ms linear opacity);
+
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+  }
+}

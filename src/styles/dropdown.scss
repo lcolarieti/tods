@@ -1,0 +1,87 @@
+.dropdown {
+
+  h4 {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .selector {
+    cursor: pointer;
+    min-width: 140px;
+    position: relative;
+    border: 1px solid $light-grey;
+    display: inline-block;
+    padding: 12px 24px 12px 12px;
+    text-transform: capitalize;
+    background-color: #ffffff;
+
+    @media screen and (max-width: $screen-m) {
+      min-width: 100%;
+    }
+
+
+    &.error {
+      border-color: red;
+    }
+
+    .value {
+      display: inline-block;
+      position: relative;
+      font-weight: 400;
+      padding-right: 5px;
+      text-transform: capitalize;
+      width: 100%;
+    }
+
+    .placeholder {
+      color: $main-color;
+      font-weight: 300;
+    }
+
+    svg {
+      color: $light-grey;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      @include transform(translate(-100%, -50%));
+    }
+
+    ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      border: 1px solid $light-grey;
+      width: 100%;
+      max-height: 100px;
+      overflow-y: auto;
+      z-index: 9;
+      max-height: none;
+
+      &.active {
+        display: block;
+      }
+
+      li {
+        cursor: pointer;
+        padding: 10px 12px;
+        font-size: 14px;
+        text-transform: capitalize;
+        background-color: #ffffff;
+        @include transition(200ms linear all);
+
+        &:hover {
+          background-color: $light-grey;
+        }
+      }
+    }
+  }
+
+}

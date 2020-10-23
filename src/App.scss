@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+$main-color: #111111;
+$secondary-color: #d9e1e5;
+$main-color-light: #868f93;
+$light-grey: #e1e1e1;
+$light-blue: #68899a;
+$padding: 30px;
+
+$screen-m: 960px;
+$screen-s: 768px;
+
+html,
+body,
+#root {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Lato', sans-serif;
+  background-color: #ffffff;
+  color: $main-color;
+}
+
+* {
+  box-sizing: border-box;
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+.container {
+  position: relative;
+  max-width: 1240px;
+  padding: 0 $padding;
+  margin: 0 auto;
+
+  @media screen and (max-width: $screen-s) {
+    padding: 0 15px;
+  }
+}
+
+.flex {
+  display: flex;
+
+  @media screen and (max-width: $screen-m) {
+    flex-direction: column;
+  }
+}
+
+.main-container {
+  margin: 45px auto 90px auto;
+}
+
+@import "styles/mixin";
+@import "styles/mini-header";
+@import "styles/header";
+@import "styles/cart";
+@import "styles/navbar";
+@import "styles/separator";
+@import "styles/loading";
+@import "styles/carousel";
+@import "styles/details";
+@import "styles/dropdown";
+@import "styles/quantity";
+@import "styles/button";
+@import "styles/infoPanel";
+@import "styles/footer";

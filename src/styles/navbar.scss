@@ -1,0 +1,100 @@
+.navbar {
+  padding: 16px 0;
+  border-bottom: 1px solid $light-grey;
+
+  @media screen and (max-width: $screen-s) {
+    text-align: left;
+  }
+
+  button {
+    display: none;
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    outline: none;
+    background-color: transparent;
+
+    @media screen and (max-width: $screen-s) {
+      display: inline-block;
+    }
+  }
+
+  ul {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 30px;
+
+    @media screen and (max-width: $screen-s) {
+      display: none;
+
+      &.in {
+        display: block;
+      }
+    }
+
+    li {
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 35px;
+      line-height: 30px;
+
+      @media screen and (max-width: $screen-s) {
+        display: block;
+        padding: 0 15px;
+        width: 100%;
+      }
+
+      &:first-of-type {
+        padding-left: 0;
+
+        @media screen and (max-width: $screen-s) {
+          padding-left: 15px;
+        }
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+
+        @media screen and (max-width: $screen-s) {
+          padding-right: 15px;
+        }
+      }
+
+      a {
+        display: inline-block;
+        vertical-align: top;
+        text-decoration: none;
+        font-size: 12px;
+        line-height: 30px;
+        color: #111111;
+        font-weight: 400;
+        text-align: center;
+        text-transform: uppercase;
+
+        &:active,
+        &:focus,
+        &:visited {
+          text-decoration: none;
+          color: #111111;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .separator {
+    position: absolute;
+    right: $padding * 2;
+    top: 0;
+
+    @media screen and (max-width: $screen-s) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.quantity {
+
+  h4 {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .selector {
+    min-width: 70px;
+    position: relative;
+    border: 1px solid $light-grey;
+    display: inline-block;
+    padding: 12px 24px 12px 12px;
+    text-transform: capitalize;
+    background-color: #ffffff;
+
+    @media screen and (max-width: $screen-m) {
+      min-width: 100%;
+    }
+
+    &.error {
+      border-color: red;
+    }
+
+    .value {
+      display: inline-block;
+      position: relative;
+      font-weight: 300;
+      padding-right: 5px;
+      text-transform: capitalize;
+      width: 100%;
+    }
+
+    .value-arrow {
+      position: absolute;
+      right: 0;
+      width: 25px;
+      text-align: center;
+      border-left: 1px solid $light-grey;
+      cursor: pointer;
+
+      &.top {
+        top: 0;
+        border-bottom: 1px solid $light-grey;
+        height: calc(50% + 1px);
+      }
+
+      &.bottom {
+        bottom: 0;
+        height: calc(50% - 1px);
+      }
+
+      svg {
+        color: $light-grey;
+      }
+    }
+  }
+}

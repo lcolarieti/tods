@@ -1,57 +1,85 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, {useEffect} from 'react';
+import './App.scss';
+import MiniHeader from './components/MiniHeader';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
 
-function App() {
+import {fetchProduct, selectFetchedProduct} from './slices/product';
+import {useDispatch, useSelector} from 'react-redux';
+import {selectLoading} from './slices/loading';
+import Loading from './components/Loading';
+import Carousel from './components/Carousel';
+import Details from './components/Details';
+import {selectCart} from './slices/cart';
+import InfoPanel from './components/InfoPanel';
+import Footer from './components/Footer';
+
+const App = () => {
+  const navbarItems = [
+    {
+      label: 'home',
+      url: '#'
+    },
+    {
+      label: 'men',
+      url: '#'
+    },
+    {
+      label: 'women',
+      url: '#'
+    },
+    {
+      label: 'lookbook',
+      url: '#'
+    },
+    {
+      label: 'about',
+      url: '#'
+    },
+    {
+      label: 'blog',
+      url: '#'
+    }
+  ];
+  const dispatch = useDispatch();
+  const {data} = useSelector(selectFetchedProduct);
+  const loading = useSelector(selectLoading);
+  const cart = useSelector(selectCart);
+
+  useEffect(() => {
+    !data && dispatch(fetchProduct());
+
+    // eslint-disable-next-line
+  }, [cart]);
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
+    <>
+      <header>
+        <MiniHeader />
+        <Header />
+        <Navbar items={navbarItems} />
       </header>
-    </div>
+      {
+        data && (
+          <main className="main-container flex container">
+            <Carousel />
+            <Details  />
+          </main>
+        )
+      }
+      {
+        cart.length > 0 && (
+          <InfoPanel
+            title="Cart"
+            description={`${cart.slice(-1).pop().quantity} items added to cart!`}
+            time={new Date().getTime()}
+          />)
+      }
+      {loading && <Loading />}
+      <Footer />
+    </>
   );
 }
 
