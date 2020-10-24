@@ -1,21 +1,21 @@
 .info-panel {
-  width: 240px;
   position: fixed;
-  background-color: rgba(0, 218, 130, .8);
-  top: -10px;
+  width: 240px;
+  background-color: rgba(217, 225, 229, .8);
+  bottom: -10px;
   left: calc(50% - 120px);
-  padding: 20px;
+  padding: 10px 15px;
   z-index: 99;
   border-radius: 10px;
   -webkit-box-shadow: 10px 10px 5px -6px rgba(170,170,170,1);
   -moz-box-shadow: 10px 10px 5px -6px rgba(170,170,170,1);
   box-shadow: 10px 10px 5px -6px rgba(170,170,170,1);
   text-align: center;
-  @include transform(translate(0, -100%));
+  @include transform(translate(0, 100%));
   @include transition(200ms linear all);
 
   &.in  {
-    top: 30px;
+    bottom: 30px;
     @include transform(translate(0, 0));
   }
 
@@ -24,6 +24,6 @@
   }
 
   p {
-    margin: 10px 0 0 0;
+    margin: 5px 0 0 0;
   }
 }

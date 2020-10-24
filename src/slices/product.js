@@ -4,7 +4,7 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 export const fetchProduct = createAsyncThunk(
   'product/getProduct',
   async (args, thunkApi) => {
-    const response = await fetch(`${process.env.PUBLIC_URL}/product.json`);
+    const response = await fetch(process.env.REACT_APP_API_URL);
     if (!response.ok) throw Error(response.statusText);
     return (await response.json());
 

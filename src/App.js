@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import './App.scss';
+import {fetchProduct, selectFetchedProduct} from './slices/product';
+import {useDispatch, useSelector} from 'react-redux';
+import {navbarItems} from './datas';
 import MiniHeader from './components/MiniHeader';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
-
-import {fetchProduct, selectFetchedProduct} from './slices/product';
-import {useDispatch, useSelector} from 'react-redux';
 import {selectLoading} from './slices/loading';
 import Loading from './components/Loading';
 import Carousel from './components/Carousel';
@@ -14,33 +14,8 @@ import {selectCart} from './slices/cart';
 import InfoPanel from './components/InfoPanel';
 import Footer from './components/Footer';
 
+
 const App = () => {
-  const navbarItems = [
-    {
-      label: 'home',
-      url: '#'
-    },
-    {
-      label: 'men',
-      url: '#'
-    },
-    {
-      label: 'women',
-      url: '#'
-    },
-    {
-      label: 'lookbook',
-      url: '#'
-    },
-    {
-      label: 'about',
-      url: '#'
-    },
-    {
-      label: 'blog',
-      url: '#'
-    }
-  ];
   const dispatch = useDispatch();
   const {data} = useSelector(selectFetchedProduct);
   const loading = useSelector(selectLoading);

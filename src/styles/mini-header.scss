@@ -9,6 +9,12 @@
 
   &.collapsed {
     height: 0;
+    padding: 0;
+  }
+
+  @media screen and (max-width: $screen-s) {
+    padding: 30px;
+    height: auto;
   }
 
   span {
@@ -21,7 +27,8 @@
     text-transform: uppercase;
 
     @media screen and (max-width: $screen-s) {
-      font-size: 8px;
+      font-size: 12px;
+      line-height: 18px;
     }
   }
 
@@ -41,7 +48,7 @@
     cursor: pointer;
 
     @media screen and (max-width: $screen-s) {
-      right: 15px;
+      right: -15px;
     }
 
     svg {
